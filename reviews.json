@@ -1,0 +1,65 @@
+{
+    "reviews": [
+      {
+        "professor": "Dr. Emma Williams",
+        "subject": "Biology 101",
+        "stars": 4,
+        "review": "Dr. Williams is very knowledgeable and passionate about biology. Her classes are engaging, but sometimes her exams are a bit too difficult."
+      },
+      {
+        "professor": "Dr. James Brown",
+        "subject": "World History",
+        "stars": 5,
+        "review": "Dr. Brown is an excellent historian. His lectures are fascinating, and he provides plenty of context to help understand historical events."
+      },
+      {
+        "professor": "Dr. Olivia Davis",
+        "subject": "Calculus I",
+        "stars": 3,
+        "review": "Dr. Davis is competent but her teaching style can be a bit dry. The material is challenging, but her office hours are helpful for clarifying doubts."
+      },
+      {
+        "professor": "Dr. Liam Johnson",
+        "subject": "Microeconomics",
+        "stars": 4,
+        "review": "Dr. Johnson is a great professor who makes economics interesting. He uses real-world examples which help in understanding complex concepts."
+      },
+      {
+        "professor": "Dr. Sophia Miller",
+        "subject": "Introduction to Sociology",
+        "stars": 5,
+        "review": "Dr. Miller is fantastic! Her lectures are interactive and she encourages critical thinking. A truly inspiring professor."
+      },
+      {
+        "professor": "Dr. Benjamin Wilson",
+        "subject": "Physics II",
+        "stars": 2,
+        "review": "Dr. Wilson's lectures are hard to follow and he is not very responsive to student questions. The course content is difficult and the grading is strict."
+      },
+      {
+        "professor": "Dr. Isabella Martinez",
+        "subject": "Creative Writing",
+        "stars": 5,
+        "review": "Dr. Martinez is an exceptional professor who provides valuable feedback and fosters a supportive workshop environment. Highly recommend her for anyone interested in writing."
+      },
+      {
+        "professor": "Dr. Noah Anderson",
+        "subject": "Statistics",
+        "stars": 4,
+        "review": "Dr. Anderson makes statistics approachable with clear explanations and helpful examples. The course is rigorous, but he provides good support throughout."
+      },
+      {
+        "professor": "Dr. Ava Taylor",
+        "subject": "Art History",
+        "stars": 3,
+        "review": "Dr. Taylor is knowledgeable about art history but her lectures can be a bit monotonous. The material is interesting but the delivery could be improved."
+      },
+      {
+        "professor": "Dr. Elijah Thomas",
+        "subject": "Computer Science Fundamentals",
+        "stars": 4,
+        "review": "Dr. Thomas is a solid professor with a knack for explaining complex topics in a simple way. The coursework is challenging, but his teaching is effective."
+      }
+    ]
+  }
+  
