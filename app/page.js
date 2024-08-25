@@ -1,5 +1,5 @@
 "use client"
-import { Mea_Culpa } from "next/font/google";
+
 import { userAgent } from "next/server";
 import { useState } from "react";
 
