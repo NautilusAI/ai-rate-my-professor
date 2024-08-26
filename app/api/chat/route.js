@@ -39,8 +39,8 @@ export async function POST(req) {
   const openai = new OpenAI();
 
   const text = data[data.length - 1].content;
-  const embedding = await OpenAI.Embeddings.create({
-    model: "text-embeddings-3-small",
+  const embedding = await openai.embeddings.create({
+    model: "text-embedding-3-small",
     input: text,
     encoding_format: "float",
   });
@@ -48,7 +48,7 @@ export async function POST(req) {
   const results = await  index.query({
     topK: 3, 
     includeMetadata: true,
-    vector: embeddings.data[0].embedding 
+    vector: embedding.data[0].embedding,
   })
 
   let resultString = "\n\n Returned Results from vector db (done automatically): "
@@ -57,7 +57,7 @@ export async function POST(req) {
      resultString+=`\n
      Professor: ${match.id}
      Subject: ${match.metadata.subject}
-     Reviews: ${match.metadata.review}
+     Review: ${match.metadata.review}//could be .stars and remove the s in reviews
      Stars: ${match.metadata.stars}
      \n\n
      `
@@ -65,9 +65,9 @@ export async function POST(req) {
 
    const lastMessage = data[data.length - 1]
    const lastMessageContent = lastMessage.content + resultString  
-   const lastDataWithoutLastMessage = data.slice(0,   data.length - 1)
+   const lastDataWithoutLastMessage = data.slice(0, data.length - 1)
 
-   const completion = awiat openai.chat.completions.create({
+   const completion = await openai.chat.completions.create({
     messages: [
         {role: 'system', content: system_prompt},
         ...lastDataWithoutLastMessage,
@@ -77,7 +77,7 @@ export async function POST(req) {
     stream: true,
    })
 
-   const stream = ReadableStream({
+   const stream = new ReadableStream({
     async start(controller) {
         const encoder = new TextEncoder() 
         try{
