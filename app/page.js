@@ -1,5 +1,6 @@
 "use client"
 
+import { Box, Button, Stack, TextField } from "@mui/material";
 import { userAgent } from "next/server";
 import { useState } from "react";
 
@@ -13,22 +14,21 @@ export default function Home() {
 
   const [message, setMessage] = useState('')
   
-  const sendMessage = async () => {
+  const sendMessage = async () => {
+    setMessages('')
     setMessages((messages) => [
       ...messages,
       {role: "user", content: message},
-      {role: "assistant", content: ' '},
+      {role: "assistant", content: ''},
     ])
-
-    setMessages('' )
     
     const response =  fetch('/api/chat', {
       method: "POST",
       headers: {
-        'Content-Type': 'applications/json'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify([...messages, {role: 'user', content: message}])
-    }).then(async(res) => {
+    }).then(async (res) => {
       const reader = res.body.getReader()
       const decoder = new TextDecoder()
 
@@ -76,14 +76,16 @@ export default function Home() {
         flexgrow={1} 
         overflow="auto" 
         maxheight="100%">
-        {message.map((message,index)=>(
+        {messages.map((message,index)=>(
           <Box key={index} display="flex" justifyContent={message.role === "assistant" ? 'flex-start' : 'flex-end'}>
             <Box 
             bgcolor={message.role === "assistant" ? 'primary.main' : 'secondary.main'}
             color="white"
             borderRadius={16}
             p={3}
-            >{message.content}</Box>
+            >
+            {message.content}
+            </Box>
           </Box>
         ))}
         </Stack>
