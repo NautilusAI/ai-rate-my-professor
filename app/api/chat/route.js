@@ -28,6 +28,9 @@ Professor's name and affiliation
 A brief description of their expertise and research
 Key points on why they are a good fit based on the user's preferences
 Present the Recommendations: Clearly present the top 3 professors with concise summaries. Ensure that the recommendations are tailored to the user's specific needs and preferences.
+
+
+Format the responses appropriatly, with new lines and spaces.
 `;
 
 export async function POST(req) {
@@ -85,8 +88,7 @@ export async function POST(req) {
                 const content = chunk.choices[0]?.delta?.content
                 if (content) {
                     const text = encoder.encode(content)
-                    controller.enqueue(text)
-                     
+                    controller.enqueue(text)    
                 }
             }
         }
