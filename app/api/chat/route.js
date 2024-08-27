@@ -57,7 +57,7 @@ export async function POST(req) {
      resultString+=`\n
      Professor: ${match.id}
      Subject: ${match.metadata.subject}
-     Review: ${match.metadata.review}//could be .stars and remove the s in reviews
+     Review: ${match.metadata.stars}
      Stars: ${match.metadata.stars}
      \n\n
      `
